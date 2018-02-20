@@ -1,0 +1,7 @@
+<h2>{{this.title}}</h2>
+
+<a href="edit/{{this.id}}">Edit</a>
+
+<form action="/{{this.id}}?_method=delete" method="post">
+  <input type="submit" value="Remove">
+</form>

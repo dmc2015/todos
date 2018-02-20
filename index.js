@@ -49,7 +49,8 @@ app.post('/', (req, res) => {
 
 // get a specific to do
 app.get('/:id', (req, res) => {
-  let todo = todos.filter(todo => todo.id === req.params.id);
+  let todo = todos.find(todo => todo.id === parseInt(req.params.id));
+  console.log(todo)
   res.render('todos/show', todo);
 });
 
