@@ -1,0 +1,9 @@
+<h1>Hello</h1>
+
+<ul>
+  {{#each todos}}
+    <li>{{this.title}} - <a href="edit/{{this.id}}">Edit</a></li>
+  {{/each}}
+</ul>
+
+<a href="/new">New</a>
