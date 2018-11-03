@@ -1,0 +1,37 @@
+<script src="/assets/js/events.js" type="text/javascript" defer></script>
+
+<div>
+    this is the items page
+</div>
+
+<div id="list-container">
+
+  <ul>
+  {{#each items}}
+
+    <li>
+        <label for="check_box">
+            {{#if this.complete}}
+                <input class="checkbox-complete" data-id={{this.id}} type="checkbox" name="check_box" id="complete" checked/>
+            {{else }}
+                <input class="checkbox-incomplete" data-id={{this.id}} type="checkbox" name="check_box" id="complete"/>
+            {{/if}}
+        </label>
+        <a href="/items/{{this.id}}">{{this.title}}</a> - 
+        <a href="/items/edit/{{this.id}}">Edit</a> - 
+        <a href="/items/delete/{{this.id}}">Delete</a>  
+    </li>
+  {{/each}}
+    </ul>
+    </div>
+<div>
+
+    <form action="/items/" method="post">
+        <label name="title">Create a new to do item for your to do list</label>
+        <input name="title" type="input" />
+
+        <label name='description'>Details About The ToDo</label>
+        <input name='description' type="input" />
+        <input label='submit' type="submit" />
+    </form>
+</div>

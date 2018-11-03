@@ -1,0 +1,7 @@
+#specific-item {
+    border: solid;
+    margin: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
