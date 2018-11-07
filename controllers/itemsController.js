@@ -41,12 +41,7 @@ router.get('/items/edit/:id', (req, res) => {
     }) 
 })
 
-router.put('/items/:id', (req, res) => {
-    req.body.complete = req.body.complete ? true : false
-    Items.findOneAndUpdate({_id : req.params.id }, req.body, { new : true} ).then( () => {
-        res.redirect('/')
-    })
-})
+
 
 
 router.get('/items/delete/:id', (req, res) => {
@@ -56,8 +51,16 @@ router.get('/items/delete/:id', (req, res) => {
 })
 
 router.patch('/items/patch/:id', (req, res) => {
-    Items.findOneAndUpdate({_id : req.params.id}, {$set:{complete:req.body.checked}}, {new : true}).then( () => {})
+    Items.findOneAndUpdate({_id : req.params.id}, {$set:{complete:req.body.checked}}, {new : true})
+    .then( () => {})
  })
+
+ router.put('/items/:id', (req, res) => {
+    req.body.complete = req.body.complete ? true : false
+    Items.findOneAndUpdate({_id : req.params.id }, req.body, { new : true} ).then( () => {
+        res.redirect('/')
+    })
+})
 
 
 router.delete('/items/delete/:id', (req, res) => {

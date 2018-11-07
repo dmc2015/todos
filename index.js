@@ -24,6 +24,12 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', itemsController)
 
 
-app.listen(4000, () => {
-    console.log('listening on port 4000')
+app.set('port', process.env.PORT || 3001)
+
+app.listen(app.get('port'), () => {
+  console.log(`✅ PORT: ${app.get('port')} 🌟`)
 })
+
+// app.listen(4000, () => {
+//     console.log('listening on port 4000')
+// })
