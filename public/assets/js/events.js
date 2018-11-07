@@ -5,10 +5,10 @@ document.querySelector("#list-container").addEventListener('click', (evt) => {
         var id = evt.target.attributes['data-id'].value
         // fetch("patch")
     }
-
+    http://localhost:3001/items"
     var reqBody = {checked: evt.target.checked }
     // JSON.stringify(reqBody)
-    var url = 'http://localhost:4000' + "/items/patch/" + id
+    var url = window.location.href + "/patch/" + id
     fetch(url, {
         method: 'PATCH',
         body: JSON.stringify(reqBody),
